@@ -1,0 +1,29 @@
+<head>
+  <title>When Pigs Fly</title>
+</head>
+
+<body>
+  {{> hello}}
+  {{> welcome}}
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  {{greeting}}
+</template>
+
+<template name="welcome">
+	{{#if showHome}}
+	<h1>Select a game, or create a new one!</h1>
+	<div>
+		{{#each existingGames}}
+		 {{> listgame}}
+		{{/each}}
+	</div>
+	<span class="add">Add a new game</span>
+	{{/if}}
+</template>
+
+<template name="listGame">
+		<div class="gameListItem">{{name}}</div>
+</template>
